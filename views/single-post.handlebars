@@ -1,0 +1,11 @@
+<div class="posts-container">
+    <div class="post-homepage" data-post="{{post.id}}">
+        <div class="post-header">
+            <h3 class="post-title">{{post.title}}</h3>
+            <h5 class="post-date">Posted by {{post.user.username}} on {{format_date post.created_at}}</h5>
+        </div>
+        <div class="post-content">
+            <p>{{post.post_content}}</p>
+        </div>
+    </div> 
+</div>
