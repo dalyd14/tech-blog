@@ -11,4 +11,11 @@ async function logoutUser() {
     }
 }
 
+var globalIdleTimer = setTimeout(logoutUser, 1000 * 60 * 10)
+
+function resetIdleTimer() {
+    clearTimeout(globalIdleTimer)
+    globalIdleTimer = setTimeout(logoutUser, 1000 * 60 * 10)
+}
+
 document.querySelector('#logout-btn').addEventListener("click", logoutUser)

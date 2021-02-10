@@ -1,5 +1,8 @@
 function saveChanges(event) {
     event.preventDefault();
+
+    resetIdleTimer()
+
     const postId = event.target.closest('form').dataset.post
     const postTitle = document.getElementById('post-title').value
     const postContent = document.getElementById('post-content').value
@@ -8,6 +11,9 @@ function saveChanges(event) {
 }
 
 async function updatePost (postId, title, content) {
+
+    resetIdleTimer()
+
     const response = await fetch(`/api/posts/${postId}`, {
         method: 'put',
         body: JSON.stringify({
@@ -26,6 +32,9 @@ async function updatePost (postId, title, content) {
 }
 
 async function deletePost(event) {
+
+    resetIdleTimer()
+    
     event.preventDefault();
     const postId = event.target.closest('form').dataset.post
     const response = await fetch(`/api/posts/${postId}`, {

@@ -1,11 +1,14 @@
 document.querySelector('div.posts-container').addEventListener("click", function(event) {
     const post = event.target.closest('.outer')
     if (post) {
+        resetIdleTimer()
         window.location = '/dashboard/edit/' + post.dataset.post
     }
 })
 
 function togglePost() {
+    resetIdleTimer()
+
     const postForm = document.querySelector(".add-post")
     const startPostBtn = document.querySelector("#start-new-post-btn")
 
@@ -24,6 +27,8 @@ function togglePost() {
 
 async function addPost(event) {
     event.preventDefault();
+
+    resetIdleTimer()
 
     const postTitle = document.querySelector('#post-title').value.trim()
     const postText = document.querySelector('#post-content').value.trim()
