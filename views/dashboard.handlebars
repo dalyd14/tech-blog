@@ -1,0 +1,16 @@
+<div class="posts-container">
+    {{#unless posts}}
+    <h1 class="text-muted text-center">You have no posts yet!</h1>
+    {{else}}
+    {{#each posts}}
+    <div class="post" data-post="{{id}}">
+        <div class="post-header">
+            <h3 class="post-title">{{title}}</h3>
+            <h5 class="post-date">{{format_date created_at}}</h5>
+        </div>
+    </div>
+    {{/each}}
+    {{/unless}}
+</div>
+
+<script src="/javascript/dashboard.js"></script>

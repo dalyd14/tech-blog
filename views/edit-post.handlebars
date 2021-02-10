@@ -1,0 +1,12 @@
+<form class="edit-post-form w-75 my-5" data-post="{{post.id}}">
+    <div class="form-group">
+        <label for="post-title">Post Title:</label>
+        <input class="form-control" type="text" id="post-title" name="post-title" value="{{post.title}}">        
+    </div>
+    <div class="form-group">
+        <label for="post-content">Post Content:</label>
+        <input class="form-control" type="text" id="post-content" name="post-content" value="{{post.post_content}}">     
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="button" class="btn btn-danger">Delete Post</button>
+</form>
