@@ -72,11 +72,12 @@ router.put('/:id', (req, res) => {
         {
             title: req.body.title,
             post_content: req.body.post_content,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         },
         {
             where: {
-                id: req.params.id
+                id: req.params.id,
+                user_id: req.session.user_id
             }
         }
     )
@@ -90,6 +91,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
+            user_id: req.session.user_id,
             id: req.params.id
         }
     })
