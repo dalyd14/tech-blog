@@ -9,7 +9,7 @@ body {
     width: 70%
 }
 
-.post-homepage {
+.post {
     display: flex;
     flex-direction: column;
 
@@ -17,6 +17,10 @@ body {
     border-top: none;
 
     margin-bottom: 1rem;
+    
+    background-color: #343a40;
+
+    cursor: pointer;
 }
 
 .post-header {
@@ -25,6 +29,9 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    background-color: #343a40;
     color: white;
+}
+
+.post-content {
+    background-color: white
 }

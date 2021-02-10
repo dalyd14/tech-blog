@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection')
 const { Post, User, Comment } = require('../model')
 
 router.get('/', (req, res) => {
@@ -22,7 +21,7 @@ router.get('/', (req, res) => {
     })
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }))
-        console.log(posts)
+        console.log(req.session)
         res.render('homepage', {
             posts,
             session: req.session

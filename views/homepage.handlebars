@@ -1,13 +1,7 @@
 <div class="posts-container">
     {{#each posts}}
-    <a href="/posts/{{id}}" class="post-homepage" data-post="{{id}}">
-        <div class="post-header">
-            <h3 class="post-title">{{title}}</h3>
-            <h5 class="post-date">Posted by {{user.username}} on {{format_date created_at}}</h5>
-        </div>
-        <div class="post-content">
-            <p>{{post_content}}</p>
-        </div>
-    </a>
+    {{> simple-post}}
     {{/each}}    
 </div>
+
+<script src="/javascript/homepage.js"></script>
