@@ -34,8 +34,8 @@ async function addComment(event) {
     if (response.ok) {
         location.reload()
     } else {
+
         alert(response.statusText)
-        location.reload()
     }
 }
 

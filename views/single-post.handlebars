@@ -8,6 +8,7 @@
     {{else}}
     <h1 class="text-muted text-center">This post has no comments yet!</h1>
     {{/if}}
+    {{#if session.loggedIn}}
     <form class="add-comment w-100 mb-5 d-none">
         <div class="form-group">
             <label for="comment-content">What would you like to comment?</label>
@@ -17,6 +18,8 @@
         <button type="button" class="btn btn-secondary" id="cancel-comment-btn">Cancel</button>
     </form>
     <button type="button" id="start-new-comment-btn" class="btn btn-success my-5">&plus; Add a Comment</button>
+    {{/if}}
 </div>
-
+{{#if session.loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}
