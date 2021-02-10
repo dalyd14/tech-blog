@@ -7,6 +7,7 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
+        order: [[Comment, 'created_at', 'ASC']],
         attributes: ['id', 'title', 'post_content', 'created_at'],
         include: [
             {
@@ -16,7 +17,6 @@ router.get('/:id', (req, res) => {
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
-                order: '"created_at" DESC',
                 include: {
                     model: User,
                     attributes: ['id', 'username']
