@@ -3,14 +3,27 @@
     <h1 class="text-muted text-center">You have no posts yet!</h1>
     {{else}}
     {{#each posts}}
-    <div class="post" data-post="{{id}}">
-        <div class="post-header">
+    <div class="outer" data-post="{{id}}">
+        <div class="header">
             <h3 class="post-title">{{title}}</h3>
             <h5 class="post-date">{{format_date created_at}}</h5>
         </div>
     </div>
     {{/each}}
     {{/unless}}
+    <form class="add-post w-100 mb-5 d-none">
+        <div class="form-group">
+            <label for="post-title">Title:</label>
+            <input type="text" class="form-control" name="post-title" id="post-title">           
+        </div>
+        <div class="form-group">
+            <label for="post-content">Content:</label>
+            <textarea class="form-control" name="post-content" id="post-content" rows="5"></textarea>            
+        </div>
+        <button type="submit" class="btn btn-primary" id="add-post-btn">Add Post</button>
+        <button type="button" class="btn btn-secondary" id="cancel-post-btn">Cancel</button>
+    </form>
+    <button type="button" id="start-new-post-btn" class="btn btn-success my-5">&plus; Add a Post</button>
 </div>
 
 <script src="/javascript/dashboard.js"></script>

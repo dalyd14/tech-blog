@@ -19,7 +19,7 @@ async function createUser(username, password) {
     })
 
     if(response.ok) {
-        window.location = '/'
+        window.location = '/dashboard'
     } else {
         alert(response.statusText)
     }

@@ -16,6 +16,7 @@ router.get('/:id', (req, res) => {
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
+                order: '"created_at" DESC',
                 include: {
                     model: User,
                     attributes: ['id', 'username']

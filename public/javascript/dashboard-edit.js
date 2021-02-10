@@ -18,7 +18,7 @@ async function updatePost (postId, title, content) {
     })
 
     if (response.ok) {
-        window.location = '/dashboard' 
+        goToDashboard() 
     } else {
         console.log(response)
         alert(response.statusText)
@@ -33,12 +33,17 @@ async function deletePost(event) {
     })
 
     if (response.ok) {
-        window.location = '/dashboard'
+        goToDashboard()
     } else {
         console.log(response)
         alert(response.statusText)
     }
 }
 
+function goToDashboard() {
+    window.location = '/dashboard'
+}
+
 document.querySelector('.edit-post-form').addEventListener('submit', saveChanges)
 document.getElementById('delete-post-btn').addEventListener('click', deletePost)
+document.getElementById('cancel-btn').addEventListener('click', goToDashboard)
