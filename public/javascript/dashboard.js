@@ -1,13 +1,17 @@
 document.querySelector('div.posts-container').addEventListener("click", function(event) {
     const post = event.target.closest('.outer')
     if (post) {
-        resetIdleTimer()
+        if (typeof resetIdleTimer !== 'undefined') {
+            resetIdleTimer()
+        }
         window.location = '/dashboard/edit/' + post.dataset.post
     }
 })
 
 function togglePost() {
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const postForm = document.querySelector(".add-post")
     const startPostBtn = document.querySelector("#start-new-post-btn")
@@ -28,7 +32,9 @@ function togglePost() {
 async function addPost(event) {
     event.preventDefault();
 
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const postTitle = document.querySelector('#post-title').value.trim()
     const postText = document.querySelector('#post-content').value.trim()

@@ -1,7 +1,9 @@
 function saveChanges(event) {
     event.preventDefault();
 
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const postId = event.target.closest('form').dataset.post
     const postTitle = document.getElementById('post-title').value
@@ -12,7 +14,9 @@ function saveChanges(event) {
 
 async function updatePost (postId, title, content) {
 
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const response = await fetch(`/api/posts/${postId}`, {
         method: 'put',
@@ -33,8 +37,10 @@ async function updatePost (postId, title, content) {
 
 async function deletePost(event) {
 
-    resetIdleTimer()
-    
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
+
     event.preventDefault();
     const postId = event.target.closest('form').dataset.post
     const response = await fetch(`/api/posts/${postId}`, {

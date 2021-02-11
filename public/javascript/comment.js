@@ -1,5 +1,7 @@
 function toggleComment() {
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const commentForm = document.querySelector(".add-comment")
     const startCommentBtn = document.querySelector("#start-new-comment-btn")
@@ -20,7 +22,9 @@ function toggleComment() {
 async function addComment(event) {
     event.preventDefault();
 
-    resetIdleTimer()
+    if (typeof resetIdleTimer !== 'undefined') {
+        resetIdleTimer()
+    }
 
     const commentText = document.querySelector('#comment-content').value.trim()
     const postId = document.querySelector('.outer').dataset.post
