@@ -21,6 +21,7 @@ async function createUser(username, password) {
     if(response.ok) {
         window.location = '/dashboard'
     } else {
+        console.log(response)
         alert(response.statusText)
     }
 }
